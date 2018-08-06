@@ -1,0 +1,67 @@
+
+<div class="row flex">
+<div class="col-12">
+  <input type="text" [(ngModel)]="userFilter" placeholder="name" >
+</div>
+    <div class="col-4 ">
+      <button type="button" class="btn btn-primary btn-sm-block button" (click)="openAddLink(linkModal)" value="Add Link">Add Link</button>
+    </div>
+    <div class="col-4 ">
+      <label class="checkbox-inline right button">
+        <input type="checkbox" [checked]="delMul" (change)="delMul=!delMul">Delete Multiple</label>
+    </div>
+    <div class="col-4 " >
+        <button type="button" *ngIf="delMul" class="btn btn-primary btn-sm-block button" (click)="deleteAllSelected()" value="delete all selected">Delete All Selected</button>
+
+    </div>
+  </div>
+
+
+  <div class="">
+    <ul class="list-group flex" style="display:flex;flex-direction:row">
+      <li *ngFor="let l of links| linkFilter : userFilter" class="list-group-item col-4" >
+        <div class="">
+          <div class="">
+            <app-link [link]="l" (edit)="openEditLink(l,linkModal)" (delete)="deleteLink(l)" (deleteSelected) ="selectLink($event,l)" [delMul]="delMul" ></app-link>
+
+          </div>
+    <!--       <div class="col-2">
+
+           <div class="form-check float-right" *ngIf="delMul">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" value="" [(ngModel)]="deleteMultipleList[l._id]">
+              </label>
+            </div>
+          </div>-->
+        </div>
+      </li>
+    </ul>
+
+  </div>
+
+  <ng-template #linkModal let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Modal title</h4>
+      <button type="button" class="close" aria-label="Close" (click)="c('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div>
+        <div class="form-group">
+          <label for="url">URL</label>
+          <input type="text" class="form-control" id="linkUrlId" [(ngModel)]="link.link" placeholder="Enter url" focus="true">
+
+        </div>
+        <div class="form-group">
+          <label for="urldisplaytext">URL Display text</label>
+          <input type="text" class="form-control" id="urldisplaytext" [(ngModel)]="link.displayText" placeholder="Enter url display text">
+
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="saveLink();c('Close click')">Add Link</button>
+      <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+    </div>
+  </ng-template>

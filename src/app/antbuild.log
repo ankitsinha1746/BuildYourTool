@@ -1,0 +1,97 @@
+Buildfile: C:\Users\ankitsinha6\Documents\IN_Compile_Check\IN_Compile_Check\build.xml
+     [echo] dev3
+
+setParameters:
+     [echo] SVN User ankitsinha6
+     [echo] SVN Password ******
+     [echo] SVN URL http://10.118.8.43:18080/svn/NextGen/Delivery/CaseManagement/branches/DES_Branches/DEV_3/Worker_Portal_comp
+     [echo] builtjars folder avialble
+
+ieappcheckout:
+     [echo] Getting latest IEApp Code.......
+     [echo] Enviroinment is DEV3
+      [svn] <Update> started ...
+      [svn] <Update> finished.
+
+fwcheckout:
+     [echo] Getting latest FW Code.......DEV3
+      [svn] <Update> started ...
+      [svn] <Update> finished.
+
+fwcompile:
+     [echo] Compiling FW Code.......DEV3
+    [javac] C:\Users\ankitsinha6\Documents\IN_Compile_Check\IN_Compile_Check\build.xml:269: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 56 source files to C:\Users\ankitsinha6\Documents\IN_Compile_Check\IN_Compile_Check\DEV3\Code\FW\classes
+
+fwbuild:
+     [echo] Creating FW.jar.......
+
+FWvalidate:
+
+dacheckout:
+     [echo] Getting latest DA Code.......
+      [svn] <Update> started ...
+      [svn] <Update> finished.
+
+dacompile:
+     [echo] Compiling DA Code.......
+    [javac] C:\Users\ankitsinha6\Documents\IN_Compile_Check\IN_Compile_Check\build.xml:289: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+dabuild:
+     [echo] Creating DA.jar.......
+
+DAvalidate:
+
+commoncheckout:
+     [echo] Getting latest Common Code.......
+      [svn] <Update> started ...
+      [svn] <Update> finished.
+
+commoncompile:
+     [echo] Compiling Common Code.......
+    [javac] C:\Users\ankitsinha6\Documents\IN_Compile_Check\IN_Compile_Check\build.xml:307: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+commonbuild:
+     [echo] Creating common.jar.......
+
+Commonvalidate:
+
+incheckout:
+     [echo] Getting latest IN Code.......
+      [svn] <Update> started ...
+      [svn] <Update> finished.
+
+incompile:
+     [echo] Compiling IN Code.......
+    [javac] C:\Users\ankitsinha6\Documents\IN_Compile_Check\IN_Compile_Check\build.xml:351: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+inbuild:
+     [echo] Creating IN.jar.......
+
+Invalidate:
+
+wppropertiescheckout:
+     [echo] Getting latest IEApp_properties Code.......
+      [svn] <Update> started ...
+      [svn] <Update> finished.
+
+batchpropertiescheckout:
+     [echo] Getting latest Batch_properties Code.......
+      [svn] <Update> started ...
+      [svn] <Update> finished.
+
+propertiesbuild:
+     [echo] Building Properties.jar.......
+     [copy] Copying 1 file to C:\Users\ankitsinha6\Documents\IN_Compile_Check\IN_Compile_Check\DEV3\Code\Batch_Properties
+     [copy] Copying 1 file to C:\Users\ankitsinha6\Documents\IN_Compile_Check\IN_Compile_Check\DEV3\Code\IEApp_Properties
+     [copy] Copying 1 file to C:\Users\ankitsinha6\Documents\IN_Compile_Check\IN_Compile_Check\DEV3\Code\IEApp_Properties
+      [jar] Building jar: C:\Users\ankitsinha6\Documents\IN_Compile_Check\IN_Compile_Check\DEV3\builtjars\IEApp_Properties\properties.jar
+      [jar] Building jar: C:\Users\ankitsinha6\Documents\IN_Compile_Check\IN_Compile_Check\DEV3\builtjars\Batch_Properties\properties.jar
+
+buildproperties:
+
+IN:
+     [echo] VALIDATION FOR INTERFACE  AND DEPENDANT MODULES  PASSED : REFER C:\Users\ankitsinha6\Documents\IN_Compile_Check\IN_Compile_Check/DEV3\builtjars\ FOR LATEST JARS 
+
+BUILD SUCCESSFUL
+Total time: 1 minute 6 seconds

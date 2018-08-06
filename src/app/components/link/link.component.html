@@ -1,0 +1,14 @@
+<div class="row">
+  <a href="{{link.link}}" class="link" style="width:100%">{{link.displayText}}</a>
+  <div class="" style="float:left;padding-left:30%">
+    <button type="button" class="btn btn-primary btn-sm-block " (click)="editLink()" value="Edit Link">
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <span class="hidden-sm-down"> Edit</span>
+    </button>
+    <button type="button" *ngIf="!delMul"  class="btn btn-primary btn-sm-block float-right" (click)="deleteLink(link)" value="Delete Link">
+        <i class="fa fa-times" aria-hidden="true"></i>
+        <span class="hidden-sm-down"> Delete</span>
+      </button>
+      <input type="checkbox" *ngIf="delMul" [(ngModel)]="deleteFlag" (change)="emitChanges()"/>
+  </div>
+</div>

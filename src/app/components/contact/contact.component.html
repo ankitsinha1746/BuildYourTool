@@ -1,0 +1,13 @@
+<div class="row">
+  <a href="{{contact.contactName}}" class="link" style="width:100%">{{contact.displayName}}</a>
+  <div class="" style="float:left;padding-left:30%">
+    <button type="button" class="btn btn-primary btn-sm-block " (click)="editContact()" value="Edit Contact">
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <span class="hidden-sm-down"> Edit</span>
+    </button>
+    <button type="button" class="btn btn-sm-block btn-primary float-right" (click)="deleteContact(l)" value="Delete contact">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    <span class="hidden-sm-down">  Delete</span>
+    </button>
+  </div>
+</div>

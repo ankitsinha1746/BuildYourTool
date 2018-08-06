@@ -1,0 +1,118 @@
+.navbar-brand {
+opacity: 0.5;
+}
+header p {
+    color: #bbb;
+    position: relative;
+    margin: 0 0 1.5em 0;
+}
+
+header h2 + p {
+    font-size: 1.25em;
+    margin-top: -1em;
+}
+
+header h3 + p {
+    font-size: 1.1em;
+    margin-top: -0.8em;
+}
+
+header h4 + p,
+header h5 + p,
+header h6 + p {
+    font-size: 0.9em;
+    margin-top: -0.6em;
+}
+/* Header */
+#header {
+    color: #fff;
+    cursor: default;
+    height: 3.25em;
+    left: 0;
+    line-height: 3.25em;
+   /* position: absolute;*/
+    text-align: right;
+    top: 2em;
+    width: 100%;
+    z-index: 10001;
+}
+
+    #header .inner {
+        margin: 0 auto;
+        position: relative;
+    }
+
+    #header .logo {
+        color: #ffffff;
+        display: inline-block;
+        font-weight: 400;
+        height: inherit;
+        left: 0;
+        line-height: inherit;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        font-size: 1em;
+    }
+
+        #header .logo strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+    #header a {
+        -moz-transition: color 0.2s ease-in-out;
+        -webkit-transition: color 0.2s ease-in-out;
+        -ms-transition: color 0.2s ease-in-out;
+        transition: color 0.2s ease-in-out;
+        display: inline-block;
+        padding: 0 0.75em;
+        color: inherit;
+        text-decoration: none;
+        font-size: 1em;
+    }
+
+        #header a:hover {
+            color: #43b02a;
+        }
+
+        #header a:last-child {
+            padding-right: 0;
+        }
+
+        @media screen and (max-width: 736px) {
+
+            #header a {
+                padding: 0 0.5em;
+            }
+
+        }
+
+@media screen and (max-width: 980px) {
+
+    #header {
+        top: 1em;
+    }
+
+}
+
+@media screen and (max-width: 736px) {
+
+    #header {
+        top: .5em;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    #header {
+        font-size: .9em;
+    }
+
+}
+.navbar-dark {
+background: rgba(75, 75, 93, 0.85);
+opacity: 0.8;
+}

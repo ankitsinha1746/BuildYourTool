@@ -1,0 +1,100 @@
+<div class="row" id="mainRow">
+        <div class="col-md-6">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                        <header id="header">
+                                <div class="inner">
+                                        <span class="logo">
+                                                <img class="mylogo" src="https://upload.wikimedia.org/wikipedia/commons/1/15/Deloitte_Logo.png" />
+                                        </span>
+                                        <span class="headeranimation"><span style="color:#43b02a;"><i class="fa fa-cogs" aria-hidden="true"></i></span> Build Your Code
+                                                <!-- <sub style="color:#43b02a;font-size: 15px;"> By Team IEDSS</sub> -->
+                                        </span>
+                                </div>
+                        </header>
+                </nav>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+                <span id="datesection"><i class="fa fa-calendar fa-1x" aria-hidden="true"></i>  
+                        <span id="timeelaspedsection">&nbsp;{{today | date}}</span>
+                </span>
+        </div>
+</div>
+
+<div class="row container-fluid" id="container">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" id="boxarea">
+                <form>
+                        <div class="form-group" style="float:center;">
+                                <label for="stream" style="font-family:sans-serif;font-weight:800;margin-top: 50px;color:rgba(75, 75, 93, 0.85);">
+                                        <b>Select Stream
+                                                <span id="requiredsymbol">*</span>
+                                        </b>
+                                        <span id="ExceptionMsg" *ngIf="isStreamNotSelected"> Please select Stream, It is a required field</span>
+                                </label>
+                                <select class="form-control" id="stream" (change)="onSelectStream($event.target.value)" (keyup)="onKey($event)" [disabled]="!completed"
+                                        style="font-family: Arial, Helvetica, sans-serif;font-weight:400;cursor: pointer;">
+                                        <option value="none">Select Stream</option>
+                                        <option *ngFor="let stream of streams" value={{stream.streamName}}>{{stream.streamValue}}</option>
+                                </select>
+                                <label for="module" style="font-family:sans-serif;font-weight:800;margin-top: 20px;color:rgba(75, 75, 93, 0.85);">
+                                        <b>Select Module
+                                                <span id="requiredsymbol">*</span>
+                                        </b>
+                                        <span style="font-size: 12px;color:#e30613;" *ngIf="isModuleNotSelected"> Please select Module, It is a required field</span>
+                                </label>
+                                <select class="form-control" id="module" (change)="onSelectModule($event.target.value)" [disabled]="!completed" style="font-family: Arial, Helvetica, sans-serif;font-weight:400;cursor: pointer;">
+                                        <option value="none">Select Module</option>
+                                        <option *ngFor="let module of modules" value={{module.moduleName}}>{{module.moduleValue}}</option>
+                                </select>
+                        </div>
+                        <br>
+                        <button type="button" [disabled]="!completed" class="btn btn-success btn-md" (click)="onSelect()" id="invokebutton">Invoke Build</button>
+
+                        <span *ngIf="selectedStream">
+                                Selected Stream:
+                                <b>{{selectedStream.streamName}} </b>
+                        </span>
+                        <br>
+                        <span *ngIf="selectedModule">
+                                Selected Module:
+                                <b>{{selectedModule.moduleName}} </b>
+
+                        </span>
+                </form>
+                <hr>
+                <div class="row col-md-12" *ngIf="status">
+                        <div class="col-md-5">
+                                <label for="status" id="buildstatus">Build Status :</label>
+                        </div>
+                        <div class="col-md-7" style="font-weight: bold;" [ngClass]="{greenClass: success, redClass: !success}">{{status}}
+                                <span *ngIf="showloader" id="buildloader">
+                                        <i class="fa fa-spinner fa-spin"></i>
+                                </span>
+                        </div>
+                </div>
+                <div class="row col-md-12" *ngIf="showLastbuildTime">
+                        <div class="col-md-5">
+                                <label for="status" id="buildstatus">Last Build Initiated On :</label>
+                        </div>
+                        <div class="col-md-7" style="font-weight: bold;color:#43b02a;">{{lastTimeElasped}}</div>
+                </div>
+                <div class="row" style="width:100%">
+                        <div class="col-md-12">
+                                <div class="col-md-7" style="text-align: right" *ngIf="enableLogsLink">
+                                        <span style="text-decoration: underline;font-weight: 700;">
+                                                <a href="http://localhost:4200/src/app/antbuild.log" target="_blank">View logs</a>
+                                        </span>
+                                </div>
+                                <div class="col-md-6" style="text-align: right;float: right;" *ngIf="showStatusButton">
+                                        <span>
+                                                <button id="getStatusButton" class="btn btn-primary btn-sm" (click)="getCurrentBuildStatus()"><i class="fa fa-refresh" aria-hidden="true"></i> Latest Build Status</button>
+                                        </span>
+                                </div>
+
+
+                        </div>
+                </div>
+        </div>
+
+</div>

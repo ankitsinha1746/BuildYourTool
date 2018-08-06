@@ -1,0 +1,54 @@
+<div class="row flex">
+  <div class="col-6">
+    <label class="checkbox-inline button">
+      <input type="checkbox" [checked]="delMul" (change)="delMul=!delMul">Delete Multiple</label>
+  </div>
+  <div class="col-6">
+    <button type="button" class="btn btn-primary btn-sm-block button" (click)="openAddcontact(contactModel)" value="Add contact">Add Contact</button>
+  </div>
+</div>
+
+<div class="">
+  <ul class="list-group flex" style="display:flex;flex-direction:row">
+    <li *ngFor="let l of contacts" class="list-group-item col-4">
+      <div class="">
+        <div class="">
+          <app-contact [contact]="l" (edit)="openEditContact(l,contactModel)"></app-contact>
+        </div>
+        <div class="col-2">
+          
+
+        </div>
+      </div>
+    </li>
+  </ul>
+
+</div>
+
+-
+<ng-template #contactModel let-c="close" let-d="dismiss">
+<div class="modal-header">
+  <h4 class="modal-title">Modal title</h4>
+  <button type="button" class="close" aria-label="Close" (click)="c('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div>
+    <div class="form-group">
+      <label for="url">Contact Name</label>
+      <input type="text" class="form-control" id="url" [(ngModel)]="contact.contactName" placeholder="Enter ContactName">
+
+    </div>
+    <div class="form-group">
+      <label for="urldisplaytext">Contact Display text</label>
+      <input type="text" class="form-control" id="urldisplaytext" [(ngModel)]="contact.displayName" placeholder="Enter contact display text">
+
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-success" (click)="saveContact();c('Close click')">Add Contact</button>
+  <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+</div>
+</ng-template>

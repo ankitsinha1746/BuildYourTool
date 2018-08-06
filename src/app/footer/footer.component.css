@@ -1,0 +1,35 @@
+.section-menu {
+    text-align: center;
+    width: 66%;
+    margin: auto;
+    font-size: 1rem;
+}
+ li{
+    display: inline-block;
+    text-decoration: none;
+    padding-right: 55px;
+}
+a {
+    color: #000;
+    font-size: 12px;
+    
+}
+a:hover {
+    text-decoration: none;
+    color: #43b02a;
+}
+.footer {
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    position: relative;
+    background-color:#eee;
+    padding: 1px 0;
+    color:#000;
+    height: 65px;
+    border-top: 3px grey inset;
+    overflow-y: hidden;
+}
+ul{
+    padding: 15px 0 0 40px;
+}
