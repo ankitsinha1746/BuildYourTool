@@ -99,7 +99,7 @@ button:disabled {
     margin-bottom: 20px; 
 }
 #boxarea{
-    box-shadow: 0px 3px 25px #4d4d53 inset;
+    box-shadow: 0px 0px 20px #4d4d53 inset;
     background-color: #fff;
     height:440px;
     border-left: 0.5px  rgba(75, 75, 93, 0.85) solid;
@@ -119,3 +119,4 @@ button:disabled {
 #buildloader{
     color:#000;
 }
+

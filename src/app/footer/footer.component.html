@@ -2,7 +2,8 @@
         <div class="container">
                 <div class="section-menu">
                     <ul>           
-                        <li><span style="font-size: 13px">Copyright &copy;  Deloitte Consulting India Pvt. Ltd. <a href="#myModal" class="btn" data-toggle="modal">Limitations &amp; Ongoing Enhancements</a></span>  </li>
+                        <li><span style="font-size: 13px;font-weight:bold;">Copyright &copy;  Deloitte Consulting India Pvt. Ltd. <a href="#myModal" class="btn" data-toggle="modal" style="font-size: 13px;">Limitations &amp; Ongoing Enhancements</a></span>
+                          <span><a href="#myModal2" class="btn" data-toggle="modal" style="font-size: 13px;">Report A Bug</a><i class="fa fa-bug" aria-hidden="true"></i></span> </li>
                     </ul>            
                 </div>
             </div>
@@ -14,18 +15,45 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h4 class="modal-title">Limitations &amp; Ongoing Enhancements</h4>
+                      <span class="logo" style="font-weight: bold"><img style="width: 120px; height:45px;" src = "https://upload.wikimedia.org/wikipedia/commons/1/15/Deloitte_Logo.png"/></span>
                       <br>
-                      <p style="font-weight: bold;">Please read the limitations &amp; ongoing enhancements carefully before closing this section.</p>
+                      <h4 class="modal-title" style="margin-left: 15px;">Limitations &amp; Ongoing Enhancements</h4>
+                      <br>
+                      <p style="font-weight: bold;margin-left: 15px;color:#43b02a;">Please read the limitations &amp; ongoing enhancements carefully before closing this section.</p>
                     </div>
                     <div class="modal-body">
-                      <p>We hope you like this utility. For now it has capability to build only IN module on both DEV3 and DEV4 streams. We are in process of making this utility capable to build other modules as well. Your patience is highly appreciated.</p>
+                      <p style="text-align: justify;font-weight: bold;margin-left: 15px;">We hope you like this utility. For now it has capability to build only IN and BO module on both DEV3 and DEV4 streams. We are in process of making this utility capable to build other modules as well. Your patience is highly appreciated.</p>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Close</button>
                     </div>
                   </div>
               
                 </div>
               </div>
+
+
+              <div id="myModal2" class="modal fade" role="dialog">
+                  <div class="modal-dialog modal-md">
+                
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <span class="logo" style="font-weight: bold"><img style="width: 120px; height:45px;" src = "https://upload.wikimedia.org/wikipedia/commons/1/15/Deloitte_Logo.png"/></span>
+                        <br>
+                        <h4 class="modal-title" style="margin-left: 15px;">Report a Bug Or Send Suggestions</h4>
+                        <br>
+                        <p style="font-weight: bold;margin-left: 15px;color:#43b02a;text-align: justify;">We are thankful to see you here. Please report if you found a bug. We will be happy to solve it and make the application more robust. Thank You..!!</p>
+                      </div>
+                      <div class="modal-body">
+                        <textarea style="text-align: justify;font-weight: bold;margin-left: 15px;" placeholder="Report your bug Or Send Us Suggestions.." autofocus rows="10"cols="65"></textarea>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-md btn-primary" data-dismiss="modal"><i class="fa fa-envelope" aria-hidden="true"></i> Send to Admin</button>
+                      </div>
+                    </div>
+                
+                  </div>
+                </div>
               

@@ -9,7 +9,7 @@ import { Stream } from '../../stream';
 @Injectable()
 export class DataService {
 
-  private buildURL = 'http://10.14.224.55:8080';
+  private buildURL = 'http://10.14.225.87:8080';
   constructor(private http:Http) { }
   getItem(module: String, stream : String):Observable<any>{
     return this.http.get(`${this.buildURL}/${module}/${stream}`).map(
