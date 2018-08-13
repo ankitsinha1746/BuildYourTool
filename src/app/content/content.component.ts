@@ -166,6 +166,7 @@ export class ContentComponent implements OnInit {
         this.success = false;
         this.showStatusButton = true;
         this.showloader = false;
+        this.enableLogsLink = false;
         console.log("There is an error : " + err);
         return;
       })
